@@ -1,31 +1,19 @@
-# Nome do executável final
-TARGET = pizzaria
-
-# Compilador e flags
 CC = gcc
-CFLAGS = -Wall -Wextra -O2
+CFLAGS = -Wall -g
 
-# Arquivos-fonte
-SRCS = pizzaria.c pizzas.c ing.c
+# Definindo os diretórios de inclusão
+INCLUDE_DIRS = -IIngredientes -IPizzas
 
-# Arquivos-objeto
-OBJS = $(SRCS:.c=.o)
+# Definindo os arquivos fontes
+SRC = Pizzaria.c Pizzas/Pizzas.c Ingredientes/Ing.c
 
-# Regra principal
-all: $(TARGET)
+# Nome do executável
+EXEC = pizzaria
 
-# Criação do executável
-$(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^
-
-# Compilação dos arquivos .c para .o
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+# Regras
+$(EXEC): $(SRC)
+	$(CC) $(CFLAGS) $(INCLUDE_DIRS) $(SRC) -o $(EXEC)
 
 # Limpeza dos arquivos gerados
 clean:
-	rm -f $(OBJS) $(TARGET)
-
-# Regra para rodar o programa
-run: all
-	./$(TARGET)
+	rm -f $(EXEC)

@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include<stdbool.h>
-#include "Ing.h"
+#include "../Ingredientes/Ing.h"
 #include "Pizzas.h"
 
 /**

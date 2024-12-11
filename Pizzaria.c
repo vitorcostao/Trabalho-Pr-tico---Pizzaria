@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include "Ing.h"
-#include "Pizzas.h"
+#include "Ingredientes/ing.h"
+#include "Pizzas/Pizzas.h"
 
 
 I* PrimeiroCadastro(int* IngTotais){
